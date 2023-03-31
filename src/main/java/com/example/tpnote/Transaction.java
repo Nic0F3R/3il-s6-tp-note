@@ -42,7 +42,7 @@ public class Transaction implements Serializable {
     }
 
     public void setNom(String pfNom) {
-
+        this.nom = pfNom;
     }
 
     public void setType(char pfType) {
