@@ -38,4 +38,38 @@ class TauxTest {
             Taux t1 = new Taux("Nom", 500, 200);
         });
     }
+
+    // ---- TESTS GETTERS ---- //
+
+    @Test
+    void testGetNom() {
+        try {
+            Taux t1 = new Taux("Nom", 0, 1000);
+            assertEquals("Nom", t1.getNom());
+        } catch(Exception e) {
+            System.err.println("Erreur testGetNom() de TauxTest");
+        }
+    }
+
+    @Test
+    void testGetSeuilInferieur() {
+        try {
+            Taux t1 = new Taux("Nom", 0, 1000);
+            assertEquals(0, t1.getSeuilInferieur());
+        } catch(Exception e) {
+            System.err.println("Erreur testGetSeuilInferieur() de TauxTest");
+        }
+    }
+
+    @Test
+    void testGetSeuilSuperieur() {
+        try {
+            Taux t1 = new Taux("Nom", 0, 1000);
+            assertEquals(1000, t1.getSeuilSuperieur());
+        } catch(Exception e) {
+            System.err.println("Erreur testGetSeuilSuperieur() de TauxTest");
+        }
+    }
+
+    // ---- TESTS SETTERS ---- //
 }
