@@ -23,6 +23,14 @@ public class Taux {
      */
     public Taux(String pfNom, double pfSeuilInferieur, double pfSeuilSuperieur) throws Exception {
 
+        // Teste si le nom du Taux n'est pas vide
+        if(pfNom.isEmpty()) {
+            throw new Exception("Le nom du Taux ne peut pas être vide");
+        }
+
+        this.nom = pfNom;
+        this.seuilInferieur = pfSeuilInferieur;
+        this.seuilSuperieur = pfSeuilSuperieur;
     }
 
     public String getNom() {
