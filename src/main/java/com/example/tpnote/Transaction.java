@@ -45,18 +45,33 @@ public class Transaction implements Serializable {
         this.montant = pfMontant;
     }
 
+    /**
+     * @return le nom de la Transaction
+     */
     public String getNom() {
         return this.nom;
     }
 
+    /**
+     * @return le type 'c' ou 'd' de la Transaction
+     */
     public char getType() {
         return this.type;
     }
 
+    /**
+     * @return le montant de la Transaction
+     */
     public double getMontant() {
         return this.montant;
     }
 
+    /**
+     * Modifie le nom de la Transaction
+     *
+     * @param pfNom le nom de la Transaction
+     * @throws Exception si le nom est vide
+     */
     public void setNom(String pfNom) throws Exception {
 
         // Teste si le nom de la transaction n'est pas vide
@@ -67,6 +82,12 @@ public class Transaction implements Serializable {
         this.nom = pfNom;
     }
 
+    /**
+     * Modifie le type de la Transaction
+     *
+     * @param pfType le type 'c' ou 'd' de la transaction
+     * @throws Exception si le type est différent de 'c' ou 'd'
+     */
     public void setType(char pfType) throws Exception {
 
         // Teste si le type de la transaction est 'c' ou 'd'
@@ -77,6 +98,12 @@ public class Transaction implements Serializable {
         this.type = pfType;
     }
 
+    /**
+     * Modifie le montant de la Transaction
+     *
+     * @param pfMontant le montant de la Transaction
+     * @throws Exception si le montant est négatif ou nul
+     */
     public void setMontant(double pfMontant) throws Exception {
 
         // Teste si le débit ou le crédit est négatif ou nul
