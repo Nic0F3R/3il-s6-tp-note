@@ -38,6 +38,11 @@ public class Taux {
             throw new Exception("Le seuil supérieur ne peut pas être négatif");
         }
 
+        // Teste si le seuil supérieur est inférieur au seuil inférieur
+        if(pfSeuilSuperieur < pfSeuilInferieur) {
+            throw new Exception("Le seuil supérieur ne peut pas être inférieur au seuil inférieur");
+        }
+
         this.nom = pfNom;
         this.seuilInferieur = pfSeuilInferieur;
         this.seuilSuperieur = pfSeuilSuperieur;
