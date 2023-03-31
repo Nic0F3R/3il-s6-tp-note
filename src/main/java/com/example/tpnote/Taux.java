@@ -28,6 +28,16 @@ public class Taux {
             throw new Exception("Le nom du Taux ne peut pas être vide");
         }
 
+        // Teste si le seuil inférieur est négatif
+        if(pfSeuilInferieur < 0) {
+            throw new Exception("Le seuil inférieur ne peut pas être négatif");
+        }
+
+        // Teste si le seuil supérieur est négatif
+        if(pfSeuilSuperieur < 0) {
+            throw new Exception("Le seuil supérieur ne peut pas être négatif");
+        }
+
         this.nom = pfNom;
         this.seuilInferieur = pfSeuilInferieur;
         this.seuilSuperieur = pfSeuilSuperieur;
