@@ -8,6 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Modèle de l'application GestionnaireBanque
+ *
+ * @since le 31/03/2023
+ * @version le 31/03/2023
+ *
+ * @author Nicolas Ferrayé - 3iL
+ */
 public class GestionnaireBanque extends Application {
     @Override
     public void start(Stage stage) throws IOException {
