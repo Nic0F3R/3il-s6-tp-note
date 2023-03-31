@@ -30,7 +30,7 @@ public class Transaction implements Serializable {
     }
 
     public String getNom() {
-        return "str";
+        return this.nom;
     }
 
     public char getType() {
