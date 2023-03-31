@@ -35,6 +35,11 @@ public class Transaction implements Serializable {
             throw new Exception("Le type de la transaction doit être 'c' ou 'd'");
         }
 
+        // Teste si le débit ou le crédit est négatif ou nul
+        if(pfMontant <= 0) {
+            throw new Exception("Le montant de la transaction doit être positif");
+        }
+
         this.nom = pfNom;
         this.type = pfType;
         this.montant = pfMontant;
