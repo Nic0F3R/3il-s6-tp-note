@@ -41,15 +41,15 @@ public class Transaction implements Serializable {
         return this.montant;
     }
 
-    public void setNom() {
+    public void setNom(String pfNom) {
 
     }
 
-    public void setType() {
+    public void setType(char pfType) {
 
     }
 
-    public void setMontant() {
+    public void setMontant(double pfMontant) {
 
     }
 }

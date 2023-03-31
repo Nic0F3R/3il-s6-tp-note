@@ -29,6 +29,13 @@ class TransactionTest {
         assertEquals(2000.0, t1.getMontant());
     }
 
+    @Test
+    void testSetNom() {
+        Transaction t1 = new Transaction("Nom", 'c', 2000);
+        t1.setNom("Nom1");
+        assertEquals("Nom1", t1.getNom());
+    }
+
 
 
 
