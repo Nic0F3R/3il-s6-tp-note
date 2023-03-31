@@ -23,7 +23,10 @@ public class Transaction implements Serializable {
      * @param pfType le type de la transaction ('c' pour crédit, 'd' pour débit)
      * @param pfMontant le montant de la transaction
      */
-    public Transaction(String pfNom, char pfType, double pfMontant) {
+    public Transaction(String pfNom, char pfType, double pfMontant) throws Exception {
+
+
+
         this.nom = pfNom;
         this.type = pfType;
         this.montant = pfMontant;

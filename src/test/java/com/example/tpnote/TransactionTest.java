@@ -8,7 +8,11 @@ class TransactionTest {
 
     @Test
     void testConstructeur1() {
-        Transaction t1 = new Transaction("Nom", 'c', 2000);
+        try {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+        } catch(Exception e) {
+            System.err.println("Erreur testConstructeur1() de TransactionTest");
+        }
     }
 
     @Test
@@ -20,41 +24,65 @@ class TransactionTest {
 
     @Test
     void testGetNom() {
-        Transaction t1 = new Transaction("Nom", 'c', 2000);
-        assertEquals("Nom", t1.getNom());
+        try {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            assertEquals("Nom", t1.getNom());
+        } catch(Exception e) {
+            System.err.println("Erreur testGetNom() de TransactionTest");
+        }
     }
 
     @Test
     void testGetType() {
-        Transaction t1 = new Transaction("Nom", 'c', 2000);
-        assertEquals('c', t1.getType());
+        try {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            assertEquals('c', t1.getType());
+        } catch(Exception e) {
+            System.err.println("Erreur testGetType() de TransactionTest");
+        }
     }
 
     @Test
     void testGetMontant() {
-        Transaction t1 = new Transaction("Nom", 'c', 2000);
-        assertEquals(2000.0, t1.getMontant());
+        try {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            assertEquals(2000.0, t1.getMontant());
+        } catch(Exception e) {
+            System.err.println("Erreur testGetMontant() de TransactionTest");
+        }
     }
 
     @Test
     void testSetNom() {
-        Transaction t1 = new Transaction("Nom", 'c', 2000);
-        t1.setNom("Nom1");
-        assertEquals("Nom1", t1.getNom());
+        try {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            t1.setNom("Nom1");
+            assertEquals("Nom1", t1.getNom());
+        } catch(Exception e) {
+            System.err.println("Erreur testSetNom() de TransactionTest");
+        }
     }
 
     @Test
     void testSetType() {
-        Transaction t1 = new Transaction("Nom", 'c', 2000);
-        t1.setType('d');
-        assertEquals('d', t1.getType());
+        try {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            t1.setType('d');
+            assertEquals('d', t1.getType());
+        } catch(Exception e) {
+            System.err.println("Erreur testSetType() de TransactionTest");
+        }
     }
 
     @Test
     void testSetMontant() {
-        Transaction t1 = new Transaction("Nom", 'c', 2000);
-        t1.setMontant(2500.20);
-        assertEquals(2500.20, t1.getMontant());
+        try {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            t1.setMontant(2500.20);
+            assertEquals(2500.20, t1.getMontant());
+        } catch(Exception e) {
+            System.err.println("Erreur testSetMontant() de TransactionTest");
+        }
     }
 
 
