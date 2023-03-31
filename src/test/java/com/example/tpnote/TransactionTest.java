@@ -122,6 +122,16 @@ class TransactionTest {
         }
     }
 
+    @Test
+    void testSetMontant2() {
+        assertThrows(Exception.class, () -> {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            Transaction t2 = new Transaction("Nom", 'c', 2000);
+            t1.setMontant(0);
+            t2.setMontant(-10);
+        });
+    }
+
 
 
 
