@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TransactionTest {
 
+    // ---- TESTS CONSTRUCTEUR ---- //
     @Test
     void testConstructeur1() {
         try {
@@ -38,6 +39,8 @@ class TransactionTest {
         });
     }
 
+    // ---- TESTS GETTERS ---- //
+
     @Test
     void testGetNom() {
         try {
@@ -68,36 +71,46 @@ class TransactionTest {
         }
     }
 
+    // ---- TESTS SETTERS ---- //
+
     @Test
-    void testSetNom() {
+    void testSetNom1() {
         try {
             Transaction t1 = new Transaction("Nom", 'c', 2000);
             t1.setNom("Nom1");
             assertEquals("Nom1", t1.getNom());
         } catch(Exception e) {
-            System.err.println("Erreur testSetNom() de TransactionTest");
+            System.err.println("Erreur testSetNom1() de TransactionTest");
         }
     }
 
     @Test
-    void testSetType() {
+    void testSetNom2() {
+        assertThrows(Exception.class, () -> {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            t1.setNom("");
+        });
+    }
+
+    @Test
+    void testSetType1() {
         try {
             Transaction t1 = new Transaction("Nom", 'c', 2000);
             t1.setType('d');
             assertEquals('d', t1.getType());
         } catch(Exception e) {
-            System.err.println("Erreur testSetType() de TransactionTest");
+            System.err.println("Erreur testSetType1() de TransactionTest");
         }
     }
 
     @Test
-    void testSetMontant() {
+    void testSetMontant1() {
         try {
             Transaction t1 = new Transaction("Nom", 'c', 2000);
             t1.setMontant(2500.20);
             assertEquals(2500.20, t1.getMontant());
         } catch(Exception e) {
-            System.err.println("Erreur testSetMontant() de TransactionTest");
+            System.err.println("Erreur testSetMontant1() de TransactionTest");
         }
     }
 
