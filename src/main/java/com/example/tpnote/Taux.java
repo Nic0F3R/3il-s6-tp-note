@@ -48,18 +48,33 @@ public class Taux {
         this.seuilSuperieur = pfSeuilSuperieur;
     }
 
+    /**
+     * @return le nom du Taux
+     */
     public String getNom() {
         return this.nom;
     }
 
+    /**
+     * @return le seuil inférieur du Taux
+     */
     public double getSeuilInferieur() {
         return this.seuilInferieur;
     }
 
+    /**
+     * @return le seuil supérieur du Taux
+     */
     public double getSeuilSuperieur() {
         return this.seuilSuperieur;
     }
 
+    /**
+     * Modifie le nom du Taux
+     *
+     * @param pfNom le nom du Taux
+     * @throws Exception si le nom est vide
+     */
     public void setNom(String pfNom) throws Exception {
 
         // Teste si le nom du Taux n'est pas vide
@@ -71,6 +86,12 @@ public class Taux {
 
     }
 
+    /**
+     * Modifie le seuil inférieur du Taux
+     *
+     * @param pfSeuilInferieur le seuil inférieur du taux
+     * @throws Exception si le seuil inférieur est < 0 ou > au seuil supérieur
+     */
     public void setSeuilInferieur(double pfSeuilInferieur) throws Exception {
 
         // Teste si le seuil inférieur est négatif
@@ -87,6 +108,12 @@ public class Taux {
 
     }
 
+    /**
+     * Modifie le seuil supérieur du Taux
+     *
+     * @param pfSeuilSuperieur le seuil supérieur du taux
+     * @throws Exception si le seuil supérieur est < 0 ou < au seuil inférieur
+     */
     public void setSeuilSuperieur(double pfSeuilSuperieur) throws Exception {
 
         // Teste si le seuil supérieur est négatif

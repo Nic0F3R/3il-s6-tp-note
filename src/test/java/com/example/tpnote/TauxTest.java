@@ -115,4 +115,5 @@ class TauxTest {
             t1.setSeuilSuperieur(500);
         });
     }
+
 }
