@@ -25,7 +25,9 @@ public class Transaction implements Serializable {
      */
     public Transaction(String pfNom, char pfType, double pfMontant) throws Exception {
 
-
+        if(pfNom.isEmpty()) {
+            throw new Exception("Le nom de la transaction ne peut pas être vide");
+        }
 
         this.nom = pfNom;
         this.type = pfType;
