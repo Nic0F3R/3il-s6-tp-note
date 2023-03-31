@@ -10,6 +10,7 @@ class TransactionTest {
     void testConstructeur1() {
         try {
             Transaction t1 = new Transaction("Nom", 'c', 2000);
+            Transaction t2 = new Transaction("Nom", 'd', 1000);
         } catch(Exception e) {
             System.err.println("Erreur testConstructeur1() de TransactionTest");
         }
@@ -26,6 +27,14 @@ class TransactionTest {
     void testConstructeur3() {
         assertThrows(Exception.class, () -> {
             Transaction t1 = new Transaction("Nom", 'a', 2000);
+        });
+    }
+
+    @Test
+    void testConstructeur4() {
+        assertThrows(Exception.class, () -> {
+            Transaction t1 = new Transaction("Nom", 'c', 0);
+            Transaction t2 = new Transaction("Nom", 'd', -10);
         });
     }
 
