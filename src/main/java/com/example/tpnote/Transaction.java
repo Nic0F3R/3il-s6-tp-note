@@ -46,7 +46,7 @@ public class Transaction implements Serializable {
     }
 
     public void setType(char pfType) {
-
+        this.type = pfType;
     }
 
     public void setMontant(double pfMontant) {
