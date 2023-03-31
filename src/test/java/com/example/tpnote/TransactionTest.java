@@ -23,6 +23,13 @@ class TransactionTest {
     }
 
     @Test
+    void testConstructeur3() {
+        assertThrows(Exception.class, () -> {
+            Transaction t1 = new Transaction("Nom", 'a', 2000);
+        });
+    }
+
+    @Test
     void testGetNom() {
         try {
             Transaction t1 = new Transaction("Nom", 'c', 2000);
