@@ -34,7 +34,7 @@ public class Transaction implements Serializable {
     }
 
     public char getType() {
-        return 'c';
+        return 'a';
     }
 
     public double getMontant() {
