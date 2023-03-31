@@ -104,6 +104,14 @@ class TransactionTest {
     }
 
     @Test
+    void testSetType2() {
+        assertThrows(Exception.class, () -> {
+            Transaction t1 = new Transaction("Nom", 'c', 2000);
+            t1.setType('a');
+        });
+    }
+
+    @Test
     void testSetMontant1() {
         try {
             Transaction t1 = new Transaction("Nom", 'c', 2000);
