@@ -23,6 +23,12 @@ class TransactionTest {
         assertEquals('c', t1.getType());
     }
 
+    @Test
+    void testGetMontant() {
+        Transaction t1 = new Transaction("Nom", 'c', 2000);
+        assertEquals(2000.0, t1.getMontant());
+    }
+
 
 
 
