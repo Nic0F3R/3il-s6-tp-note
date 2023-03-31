@@ -16,7 +16,14 @@ public class Transaction implements Serializable {
     private char type;
     private double montant;
 
-    public Transaction() {
+    /**
+     * Constructeur de Transaction
+     *
+     * @param pfNom le nom de la transaction
+     * @param pfType le type de la transaction ('c' pour crédit, 'd' pour débit)
+     * @param pfMontant le montant de la transaction
+     */
+    public Transaction(String pfNom, char pfType, double pfMontant) {
 
     }
 
