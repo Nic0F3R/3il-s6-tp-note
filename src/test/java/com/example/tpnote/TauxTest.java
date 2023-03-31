@@ -72,4 +72,39 @@ class TauxTest {
     }
 
     // ---- TESTS SETTERS ---- //
+
+    @Test
+    void testSetNom1() {
+        try {
+            Taux t1 = new Taux("Nom", 0, 1000);
+            t1.setNom("Nom1");
+            assertEquals("Nom1", t1.getNom());
+        } catch(Exception e) {
+            System.err.println("Erreur testSetNom1() de TauxTest");
+        }
+    }
+
+    @Test
+    void testSetNom2() {
+        assertThrows(Exception.class, () -> {
+            Taux t1 = new Taux("Nom", 0, 1000);
+            t1.setNom("");
+        });
+    }
+
+    @Test
+    void testSetSeuilInferieur1() {
+        assertThrows(Exception.class, () -> {
+            Taux t1 = new Taux("Nom", 0, 1000);
+            t1.setSeuilInferieur(-10);
+        });
+    }
+
+    @Test
+    void testSetSeuilSuperieur1() {
+        assertThrows(Exception.class, () -> {
+            Taux t1 = new Taux("Nom", 0, 1000);
+            t1.setSeuilSuperieur(-10);
+        });
+    }
 }
