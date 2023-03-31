@@ -68,6 +68,12 @@ public class Transaction implements Serializable {
     }
 
     public void setType(char pfType) throws Exception {
+
+        // Teste si le type de la transaction est 'c' ou 'd'
+        if(!(pfType == 'c' || pfType == 'd')) {
+            throw new Exception("Le type de la transaction doit être 'c' ou 'd'");
+        }
+
         this.type = pfType;
     }
 
