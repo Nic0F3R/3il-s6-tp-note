@@ -31,4 +31,11 @@ class TauxTest {
             Taux t2 = new Taux("Nom", 0, -10);
         });
     }
+
+    @Test
+    void testConstructeur4() {
+        assertThrows(Exception.class, () -> {
+            Taux t1 = new Taux("Nom", 500, 200);
+        });
+    }
 }
