@@ -50,6 +50,6 @@ public class Transaction implements Serializable {
     }
 
     public void setMontant(double pfMontant) {
-
+        this.montant = pfMontant;
     }
 }
