@@ -49,15 +49,15 @@ public class Taux {
     }
 
     public String getNom() {
-        return "";
+        return this.nom;
     }
 
     public double getSeuilInferieur() {
-        return 0.0;
+        return this.seuilInferieur;
     }
 
     public double getSeuilSuperieur() {
-        return 0.0;
+        return this.seuilSuperieur;
     }
 
     public void setNom(String pfNom) {
