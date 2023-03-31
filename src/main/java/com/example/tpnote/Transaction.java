@@ -30,7 +30,10 @@ public class Transaction implements Serializable {
             throw new Exception("Le nom de la transaction ne peut pas être vide");
         }
 
-
+        // Teste si le type de la transaction est 'c' ou 'd'
+        if(!(pfType == 'c' || pfType == 'd')) {
+            throw new Exception("Le type de la transaction doit être 'c' ou 'd'");
+        }
 
         this.nom = pfNom;
         this.type = pfType;
