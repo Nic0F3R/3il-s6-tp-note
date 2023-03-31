@@ -20,7 +20,7 @@
 - **...**
     - ...
 
-** Bonnes pratiques**
+**Bonnes pratiques**
 
 # Ce qui reste à faire
 

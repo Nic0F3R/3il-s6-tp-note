@@ -3,6 +3,7 @@ package com.example.tpnote;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class GestionnaireBanque extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 200);
         stage.setTitle("Gestion bancaire");
         stage.setScene(scene);
+        stage.getIcons().add(new Image("file:Images/logo3iL.png"));
         stage.setResizable(false);
         stage.show();
     }
