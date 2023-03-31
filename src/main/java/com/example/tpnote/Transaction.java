@@ -78,6 +78,12 @@ public class Transaction implements Serializable {
     }
 
     public void setMontant(double pfMontant) throws Exception {
+
+        // Teste si le débit ou le crédit est négatif ou nul
+        if(pfMontant <= 0) {
+            throw new Exception("Le montant de la transaction doit être positif");
+        }
+
         this.montant = pfMontant;
     }
 }
