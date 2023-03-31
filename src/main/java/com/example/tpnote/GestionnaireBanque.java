@@ -6,9 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -23,7 +21,7 @@ import java.util.Scanner;
  */
 public class GestionnaireBanque extends Application {
 
-    private List<Transaction> al_transactions;
+    private List<Transaction> al_transactions = new ArrayList<Transaction>();
     private List<Taux> al_taux = new ArrayList<Taux>();
 
     private double solde;
@@ -38,11 +36,23 @@ public class GestionnaireBanque extends Application {
         stage.setResizable(false);
         stage.show();
 
+
+        // Chargement des Taux à partir du fichier taux.txt
         try {
-            loadTaux();
+            this.loadTaux();
         } catch(Exception e) {
             System.err.println("Erreur lors du chargement des Taux");
         }
+
+
+        // Enregistrement des Transactions effectuées dans le fichier SaveList.bin
+        try {
+            this.saveTransactions();
+        } catch(Exception e) {
+            System.err.println("Erreur lors de l'enregistrement des Transactions");
+        }
+
+
     }
 
     public static void main(String[] args) {
@@ -91,11 +101,28 @@ public class GestionnaireBanque extends Application {
 
             }
 
-
-
-
         } catch(Exception e) {
             System.err.println("Erreur sur le chargement des Taux dans l'application");
+        }
+
+    }
+
+    /**
+     * Permet d'enregistrer toutes les transactions dans le fichier binaire SaveList.bin
+     */
+    private void saveTransactions() {
+
+        try {
+            FileOutputStream fos = new FileOutputStream("Data" + System.getProperty("file.separator") + "SaveList.bin");
+
+            for(Transaction transaction : al_transactions) {
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(transaction);
+                oos.close();
+            }
+
+        } catch(Exception e) {
+            System.err.println("Erreur lors de l'enregistrement des Transactions du compte");
         }
     }
 }
