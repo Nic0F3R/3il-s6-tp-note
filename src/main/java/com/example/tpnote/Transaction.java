@@ -38,7 +38,7 @@ public class Transaction implements Serializable {
     }
 
     public double getMontant() {
-        return 0.0;
+        return this.montant;
     }
 
     public void setNom() {
