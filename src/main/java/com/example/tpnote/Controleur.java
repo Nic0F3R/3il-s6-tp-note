@@ -3,7 +3,7 @@ package com.example.tpnote;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class Controleur {
     @FXML
     private Label welcomeText;
 
