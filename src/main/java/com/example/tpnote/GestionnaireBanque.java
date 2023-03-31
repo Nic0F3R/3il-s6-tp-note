@@ -53,6 +53,14 @@ public class GestionnaireBanque extends Application {
         }
 
 
+        // Chargement des Transactions enregistrées dans le fichier SaveList.bin
+        try {
+            this.loadTransactions();
+        } catch(Exception e) {
+            System.err.println("Erreur lors du chargement des Transactions");
+        }
+
+
     }
 
     public static void main(String[] args) {
@@ -62,7 +70,7 @@ public class GestionnaireBanque extends Application {
     /**
      * Permet d'initialiser la liste des Taux à partir du fichier taux.txt
      */
-    private void loadTaux() throws Exception {
+    private void loadTaux() {
 
         try {
 
@@ -101,6 +109,8 @@ public class GestionnaireBanque extends Application {
 
             }
 
+            sc.close();
+
         } catch(Exception e) {
             System.err.println("Erreur sur le chargement des Taux dans l'application");
         }
@@ -121,8 +131,29 @@ public class GestionnaireBanque extends Application {
                 oos.close();
             }
 
+
+
         } catch(Exception e) {
             System.err.println("Erreur lors de l'enregistrement des Transactions du compte");
         }
+    }
+
+    /**
+     * Permet de charger toutes les transactions dans l'ArrayList al_transactions
+     */
+    private void loadTransactions() {
+
+        this.al_transactions = null;
+
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("Data" + System.getProperty("file.separator") + "SaveList.bin"))) {
+
+            if(in != null) {
+                this.al_transactions = (ArrayList<Transaction>) in.readObject();
+            }
+
+        } catch(Exception e) {
+            System.err.println("Erreur lors du chargement des Transactions du compte -> " + e.getMessage());
+        }
+
     }
 }
