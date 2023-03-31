@@ -11,6 +11,11 @@ class TransactionTest {
         Transaction t1 = new Transaction("Nom", 'c', 2000);
     }
 
+    @Test
+    void testGetNom() {
+        Transaction t1 = new Transaction("Nom", 'c', 2000);
+        assertEquals("Nom", t1.getNom());
+    }
 
 
 }

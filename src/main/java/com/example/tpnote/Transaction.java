@@ -24,7 +24,9 @@ public class Transaction implements Serializable {
      * @param pfMontant le montant de la transaction
      */
     public Transaction(String pfNom, char pfType, double pfMontant) {
-
+        this.nom = pfNom;
+        this.type = pfType;
+        this.montant = pfMontant;
     }
 
     public String getNom() {
