@@ -57,15 +57,21 @@ public class Transaction implements Serializable {
         return this.montant;
     }
 
-    public void setNom(String pfNom) {
+    public void setNom(String pfNom) throws Exception {
+
+        // Teste si le nom de la transaction n'est pas vide
+        if(pfNom.isEmpty()) {
+            throw new Exception("Le nom de la transaction ne peut pas être vide");
+        }
+
         this.nom = pfNom;
     }
 
-    public void setType(char pfType) {
+    public void setType(char pfType) throws Exception {
         this.type = pfType;
     }
 
-    public void setMontant(double pfMontant) {
+    public void setMontant(double pfMontant) throws Exception {
         this.montant = pfMontant;
     }
 }
