@@ -12,6 +12,13 @@ class TransactionTest {
     }
 
     @Test
+    void testConstructeur2() {
+        assertThrows(Exception.class, () -> {
+            Transaction t1 = new Transaction("", 'c', 2000);
+        });
+    }
+
+    @Test
     void testGetNom() {
         Transaction t1 = new Transaction("Nom", 'c', 2000);
         assertEquals("Nom", t1.getNom());
