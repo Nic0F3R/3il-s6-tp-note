@@ -36,6 +36,13 @@ class TransactionTest {
         assertEquals("Nom1", t1.getNom());
     }
 
+    @Test
+    void testSetType() {
+        Transaction t1 = new Transaction("Nom", 'c', 2000);
+        t1.setType('d');
+        assertEquals('d', t1.getType());
+    }
+
 
 
 
