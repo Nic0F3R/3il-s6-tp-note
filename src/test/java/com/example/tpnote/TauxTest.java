@@ -101,10 +101,18 @@ class TauxTest {
     }
 
     @Test
-    void testSetSeuilSuperieur1() {
+    void testSetSeuilInferieur2() {
         assertThrows(Exception.class, () -> {
             Taux t1 = new Taux("Nom", 0, 1000);
-            t1.setSeuilSuperieur(-10);
+            t1.setSeuilInferieur(2000);
+        });
+    }
+
+    @Test
+    void testSetSeuilSuperieur1() {
+        assertThrows(Exception.class, () -> {
+            Taux t1 = new Taux("Nom", 1000, 2000);
+            t1.setSeuilSuperieur(500);
         });
     }
 }

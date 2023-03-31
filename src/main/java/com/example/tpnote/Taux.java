@@ -60,15 +60,46 @@ public class Taux {
         return this.seuilSuperieur;
     }
 
-    public void setNom(String pfNom) {
+    public void setNom(String pfNom) throws Exception {
+
+        // Teste si le nom du Taux n'est pas vide
+        if(pfNom.isEmpty()) {
+            throw new Exception("Le nom du Taux ne peut pas être vide");
+        }
+
+        this.nom = pfNom;
 
     }
 
-    public void setSeuilInferieur(double pfSeuilInferieur) {
+    public void setSeuilInferieur(double pfSeuilInferieur) throws Exception {
+
+        // Teste si le seuil inférieur est négatif
+        if(pfSeuilInferieur < 0) {
+            throw new Exception("Le seuil inférieur ne peut pas être négatif");
+        }
+
+        // Teste si le seuil supérieur est inférieur au seuil inférieur
+        if(this.seuilSuperieur < pfSeuilInferieur) {
+            throw new Exception("Le seuil supérieur ne peut pas être inférieur au seuil inférieur");
+        }
+
+        this.seuilInferieur = pfSeuilInferieur;
 
     }
 
-    public void setSeuilSuperieur(double pfSeuilSuperieur) {
+    public void setSeuilSuperieur(double pfSeuilSuperieur) throws Exception {
+
+        // Teste si le seuil supérieur est négatif
+        if(pfSeuilSuperieur < 0) {
+            throw new Exception("Le seuil supérieur ne peut pas être négatif");
+        }
+
+        // Teste si le seuil supérieur est inférieur au seuil inférieur
+        if(pfSeuilSuperieur < this.seuilInferieur) {
+            throw new Exception("Le seuil supérieur ne peut pas être inférieur au seuil inférieur");
+        }
+
+        this.seuilSuperieur = pfSeuilSuperieur;
 
     }
 
